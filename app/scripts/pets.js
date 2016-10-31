@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 const Pet = Ember.Object.extend({
-  eat: () => { console.log('nom nom nom'); },
-  sleep: () => { console.log('zzz'); },
+  eat: () => 'nom nom nom',
+  sleep: () => 'zzz',
 });
 
 let bruce = Pet.create({
@@ -15,7 +15,7 @@ bruce.set('age', 10);
 bruce.get('age');
 
 const Dog = Pet.extend({
-  bark: () => { console.log('arf'); },
+  bark: () => 'arf',
 });
 
 let jellybeans = Dog.create({
@@ -23,4 +23,4 @@ let jellybeans = Dog.create({
   age: 7,
 });
 
-jellybeans.bark();
+console.log(jellybeans.get('bark')());
